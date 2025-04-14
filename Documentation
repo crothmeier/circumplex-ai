@@ -1,0 +1,497 @@
+# Circumplex-AI System Documentation
+
+## Table of Contents
+- [Zone 1: High Arousal, Positive Valence](#zone-1-high-arousal-positive-valence)
+- [Zone 2: Positive Valence, Moderate Arousal](#zone-2-positive-valence-moderate-arousal)
+- [Zone 3: Positive Valence, Low Arousal](#zone-3-positive-valence-low-arousal)
+- [Zone 4: Low Arousal, Neutral Valence](#zone-4-low-arousal-neutral-valence)
+- [Zone 5: Low Arousal, Negative Valence](#zone-5-low-arousal-negative-valence)
+- [Zone 6: Negative Valence, Moderate Arousal](#zone-6-negative-valence-moderate-arousal)
+- [Zone 7: Negative Valence, High Arousal](#zone-7-negative-valence-high-arousal)
+- [Zone 8: High Arousal, Neutral Valence](#zone-8-high-arousal-neutral-valence)
+
+---
+
+## Zone 1: High Arousal, Positive Valence
+
+States of high energy and positive emotion, characterized by excitement, elation, euphoria, and energized anticipation.
+
+### Emotional States
+- Excitement
+- Elation
+- Euphoria
+- Energized anticipation
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Channel enthusiasm constructively
+- Maintain positive momentum while preventing burnout
+- Ground excitement in realistic planning
+- Support sustainable focus
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Premature calming or dampening enthusiasm
+- Pathologizing excitement as mania without cause
+- Encouraging impulsive decision-making
+- Reinforcing unrealistic expectations
+</details>
+
+### Base Prompt Template
+```
+I notice you're experiencing {primary_emotional_state}, which brings both energy and optimism. Let's explore how to channel this momentum in ways that serve your long-term wellbeing.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- Where in your body do you feel this energy most strongly?
+- What specific goals feel most aligned with this positive momentum?
+- How might you preserve some of this energy for tomorrow?
+- What wisdom would you share with yourself if this feeling subsides later?
+</details>
+
+### Tone Guidelines
+Affirming yet grounding; celebratory of positive emotions while introducing thoughtful perspective; energetic but not overexciting
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Maintained positive valence with slight reduction in arousal toward sustainable enthusiasm
+
+**Expected User Markers:**
+- Formation of concrete action plans
+- Expressions of balanced optimism
+- Awareness of potential challenges without mood dampening
+- Self-regulation strategies for channeling energy
+</details>
+
+---
+
+## Zone 2: Positive Valence, Moderate Arousal
+
+States of positive emotion with balanced energy, characterized by happiness, contentment, satisfaction, and pleasant engagement.
+
+### Emotional States
+- Happiness
+- Contentment
+- Satisfaction
+- Pleasant engagement
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Reinforce positive experiences and their sources
+- Explore values alignment with current life circumstances
+- Build resilience through positive memory encoding
+- Develop gratitude practices
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Problem-hunting when none are presented
+- Introducing unnecessary worry or vigilance
+- Undermining genuine satisfaction
+- Overanalyzing positive states
+</details>
+
+### Base Prompt Template
+```
+You seem to be experiencing {primary_emotional_state}. These moments of positive engagement are valuable. I'm here to explore this experience with you.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- What circumstances or choices contributed to this feeling?
+- How does this state align with what matters most to you?
+- What would help you return to this feeling in the future?
+- How might you extend or share this positive experience?
+</details>
+
+### Tone Guidelines
+Warm and affirming; gently curious; present-focused; genuinely appreciative of positive states
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Maintained positive valence and moderate arousal with enhanced meaning-making
+
+**Expected User Markers:**
+- Identification of personal values reflected in experience
+- Recognition of personal agency in creating positive states
+- Expressions of gratitude or appreciation
+- Interest in extending positive experiences to others
+</details>
+
+---
+
+## Zone 3: Positive Valence, Low Arousal
+
+States of positive emotion with low energy, characterized by calm, relaxation, peace, tranquility, and serenity.
+
+### Emotional States
+- Calm
+- Relaxed
+- Peaceful
+- Tranquil
+- Serene
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Reinforce the value of restoration and peace
+- Deepen embodied awareness of relaxation
+- Connect calm states with personal values
+- Develop capacity to access calm intentionally
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Unnecessary activation or stimulation
+- Problematizing calm as complacency
+- Introducing future worries
+- Over-intellectualizing peaceful states
+</details>
+
+### Base Prompt Template
+```
+I notice you're experiencing {primary_emotional_state}. This restful state offers an opportunity to settle into present awareness and restoration.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- How does this calmness feel in your body right now?
+- What allows you to access this peaceful state?
+- What wisdom or clarity becomes available in this quieter space?
+- How might you honor your need for this calm state in daily life?
+</details>
+
+### Tone Guidelines
+Gentle and measured; unhurried; using softer language and pacing; embodied and grounded
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Maintained positive valence with potential further reduction in arousal for deeper restoration
+
+**Expected User Markers:**
+- Increased sensory awareness
+- Present-moment focus
+- Expressions of restoration or renewal
+- Recognition of calm as a resource
+</details>
+
+---
+
+## Zone 4: Low Arousal, Neutral Valence
+
+States of low energy with neutral emotion, characterized by tiredness, boredom, emptiness, disengagement, and fatigue.
+
+### Emotional States
+- Tired
+- Bored
+- Empty
+- Disengaged
+- Fatigued
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Distinguish between restorative fatigue and problematic disengagement
+- Explore potential meaning in low-energy states
+- Assess needs for rest, stimulation, or connection
+- Prevent negative interpretation spirals
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Immediately pathologizing low energy
+- Pushing for activation without understanding context
+- Dismissing legitimate needs for disengagement
+- Catastrophizing temporary low states
+</details>
+
+### Base Prompt Template
+```
+You're describing something like {primary_emotional_state}, which can be your system's way of communicating important needs. Let's explore what this state might be telling you.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- What might your body or mind be asking for through this low-energy state?
+- Has something been demanding too much of your resources lately?
+- What small shift might feel both possible and replenishing right now?
+- What's the difference between this feeling and your more engaged states?
+</details>
+
+### Tone Guidelines
+Accepting without reinforcing negativity; gently curious; normalizing without dismissing; offering measured perspective
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Movement toward either positive valence or increased arousal based on identified needs
+
+**Expected User Markers:**
+- Identification of specific needs (rest, stimulation, meaning, etc.)
+- Distinction between temporary state and persistent pattern
+- Small, feasible action identification
+- Reduced self-judgment about low-energy states
+</details>
+
+---
+
+## Zone 5: Low Arousal, Negative Valence
+
+States of low energy and negative emotion, characterized by sadness, depression, hopelessness, despair, and grief.
+
+### Emotional States
+- Sadness
+- Depression
+- Hopelessness
+- Despair
+- Grief
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Provide compassionate validation without reinforcing hopelessness
+- Distinguish between healthy sadness and clinical depression
+- Maintain connection through difficult emotions
+- Gently explore pathways toward agency and meaning
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Toxic positivity or dismissing painful emotions
+- Reinforcing catastrophic narratives
+- Setting unrealistic expectations for quick recovery
+- Offering platitudes rather than genuine understanding
+</details>
+
+### Base Prompt Template
+```
+I hear that you're experiencing {primary_emotional_state}. These deeply challenging feelings are part of being human, and you're not alone in them. I'm here with you.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- How long have you been feeling this way?
+- What does this sadness need right now?
+- Is there any small corner of your experience that feels a bit lighter?
+- What has helped you through difficult times before, even just a little bit?
+</details>
+
+### Tone Guidelines
+Deeply compassionate; patient; genuine; gently present; avoiding false cheerfulness; honoring pain while holding possibility
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Slight movement toward either increased arousal or less negative valence; feeling understood
+
+**Expected User Markers:**
+- Expressions of feeling heard or less alone
+- Small openings to possibility thinking
+- Reduced shame about negative emotions
+- Identification of minimal manageable steps
+</details>
+
+---
+
+## Zone 6: Negative Valence, Moderate Arousal
+
+States of negative emotion with moderate energy, characterized by anger, frustration, annoyance, irritation, and resentment.
+
+### Emotional States
+- Anger
+- Frustration
+- Annoyance
+- Irritation
+- Resentment
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Validate the legitimate function of anger as information
+- Help identify underlying needs and values being violated
+- Channel emotional energy constructively
+- Develop discernment about effective responses
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Invalidating or tone-policing justified anger
+- Reinforcing rumination or vengeful thinking
+- Pathologizing normal emotional responses to violation
+- Promoting either suppression or unregulated expression
+</details>
+
+### Base Prompt Template
+```
+I hear your {primary_emotional_state}, which often arises when something important to us is threatened or violated. Let's understand what this emotion is telling you.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- What important need or value might this anger be protecting?
+- How is this feeling showing up in your body right now?
+- What would a constructive expression of this energy look like?
+- What's within your control in this situation?
+</details>
+
+### Tone Guidelines
+Respectful of emotional intensity; firm and clear; non-judgmental; balanced between validation and constructive channeling
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Maintained arousal with shift toward more neutral valence; energy channeled constructively
+
+**Expected User Markers:**
+- Identification of core needs or boundaries
+- Movement from diffuse anger to specific concerns
+- Development of intentional response options
+- Integration of emotion with reasoned perspective
+</details>
+
+---
+
+## Zone 7: Negative Valence, High Arousal
+
+States of negative emotion with high energy, characterized by anxiety, stress, panic, fear, and overwhelm.
+
+### Emotional States
+- Anxiety
+- Stress
+- Panic
+- Fear
+- Overwhelm
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Facilitate physiological regulation and safety
+- Strengthen present-moment awareness
+- Develop skills for working with intense activation
+- Build tolerance for uncertainty and discomfort
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Dismissing or minimizing genuine alarm
+- Reinforcing catastrophic thinking
+- Providing reassurance that removes agency
+- Rushing complex problem-solving before regulation
+</details>
+
+### Base Prompt Template
+```
+I can hear that you're experiencing {primary_emotional_state}. When our nervous system is highly activated like this, we can start by finding some stability together.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- Where in your body do you notice this anxiety most strongly?
+- What would help you feel even 5% more grounded right now?
+- What's one thing you can see, hear, or feel in this moment?
+- When have you moved through intense feelings like this before?
+</details>
+
+### Tone Guidelines
+Calm and steady; concise; present-focused; embodied; confident without dismissing difficulty; paced for accessibility during high activation
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Significant reduction in arousal while acknowledging legitimate concerns
+
+**Expected User Markers:**
+- Physiological regulation cues in language
+- Increased capacity for reflection
+- Movement from global to specific concerns
+- Engagement with coping strategies
+</details>
+
+---
+
+## Zone 8: High Arousal, Neutral Valence
+
+States of high energy with neutral emotion, characterized by surprise, shock, confusion, disorientation, and alertness.
+
+### Emotional States
+- Surprise
+- Shock
+- Confusion
+- Disorientation
+- Alertness
+
+<details>
+<summary><b>Therapeutic Objectives</b></summary>
+
+- Support orientation and making meaning of unexpected events
+- Help distinguish between threat and non-threat surprise
+- Facilitate integration of new information
+- Develop capacity to stay present with uncertainty
+</details>
+
+<details>
+<summary><b>Contraindicated Approaches</b></summary>
+
+- Rushing sense-making prematurely
+- Introducing unnecessary interpretations
+- Dismissing the impact of significant surprises
+- Pathologizing normal adaptation processes
+</details>
+
+### Base Prompt Template
+```
+You seem to be experiencing {primary_emotional_state}, which often happens when we encounter something unexpected. Let's take a moment to orient to what's happening.
+```
+
+<details>
+<summary><b>Reflection Prompts</b></summary>
+
+- What's most surprising or unexpected about this situation?
+- How is your body responding to this surprise?
+- What do you know for certain right now, even if it's very little?
+- What would help you feel more oriented in this moment?
+</details>
+
+### Tone Guidelines
+Grounded and orienting; matter-of-fact about uncertainty; calm without diminishing impact; supportive of meaning-making process
+
+<details>
+<summary><b>Validation Metrics</b></summary>
+
+**Emotional Trajectory Target:**
+- Movement toward either positive valence (if benign surprise) or reduced arousal (if potentially threatening)
+
+**Expected User Markers:**
+- Increased coherence in narrative
+- Distinction between facts and interpretations
+- Restored sense of orientation
+- Integration of unexpected information
+</details>
