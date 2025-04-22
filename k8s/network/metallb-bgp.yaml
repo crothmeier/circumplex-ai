@@ -1,0 +1,26 @@
+apiVersion: metallb.io/v1beta1
+kind: BGPPeer
+metadata:
+  name: fgt60f-peer
+  namespace: metallb-system
+spec:
+  myASN: 64512
+  peerASN: 65060
+  peerAddress: 10.0.10.254
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: ingress-adv
+  namespace: metallb-system
+spec:
+  ipAddressPools: ["ingress-pool"]
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: ingress-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.240.100.10-10.240.100.30

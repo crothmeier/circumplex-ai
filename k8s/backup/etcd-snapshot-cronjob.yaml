@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: etcd-snapshot
+  namespace: kube-system
+spec:
+  schedule: "0 */6 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: etcd-snapshot
+            image: rancherlabs/swiss-army-knife:latest
+            command: ["sh","-c","etcdctl snapshot save /tmp/etcd-$(date +%s).db --endpoints=https://127.0.0.1:2379 --cacert=/var/lib/rancher/k3s/server/tls/server-ca.crt --cert=/var/lib/rancher/k3s/server/tls/client-admin.crt --key=/var/lib/rancher/k3s/server/tls/client-admin.key && mc cp /tmp/etcd-*.db minio/circumplex-backups/etcd/"]
+          restartPolicy: OnFailure

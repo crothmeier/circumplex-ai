@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata: { name: gatekeeper-system }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gatekeeper-controller-manager
+  namespace: gatekeeper-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { control-plane: controller-manager }
+  template:
+    metadata: { labels: { control-plane: controller-manager } }
+    spec:
+      containers:
+      - name: manager
+        image: openpolicyagent/gatekeeper:v3.15.0
+---
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata: { name: k8spspprivilegedcontainer }
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sPSPPrivilegedContainer
+  targets:
+  - target: admission.k8s.gatekeeper.sh
+    rego: |
+      package k8spspprivilegedcontainer
+      violation[{"msg": msg}] {
+        input.review.object.spec.containers[_].securityContext.privileged == true
+        msg := "Privileged containers are disallowed"
+      }
+---
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPPrivilegedContainer
+metadata:
+  name: no-privileged
+spec: {}

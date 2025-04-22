@@ -1,0 +1,27 @@
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+  name: ai-gpu-queue
+spec:
+  weight: 1
+---
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: whisper-batch
+  namespace: ai
+spec:
+  minAvailable: 1
+  queue: ai-gpu-queue
+  tasks:
+  - replicas: 1
+    name: whisper
+    template:
+      spec:
+        containers:
+        - name: whisper
+          image: ghcr.io/circumplex/whisper:latest
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+        restartPolicy: Never

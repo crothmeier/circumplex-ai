@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vllm-api
+  namespace: ai
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-dev
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+  - host: api.circumplex-ai.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: vllm
+            port:
+              number: 8000
+  tls:
+  - hosts:
+    - api.circumplex-ai.dev
+    secretName: api-tls

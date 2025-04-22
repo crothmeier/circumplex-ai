@@ -1,0 +1,30 @@
+mode: deployment
+image:
+  repository: otel/opentelemetry-collector-contrib
+  tag: 0.95.0
+config:
+  receivers:
+    otlp: { protocols: { grpc: {}, http: {} } }
+  processors:
+    batch: {}
+    tail_sampling:
+      decision_wait: 5s
+      policies:
+        - name: completions-keep
+          type: string_attribute
+          string_attribute:
+            key: http.target
+            values: ["/v1/chat/completions"]
+        - name: default-prob
+          type: probabilistic
+          probabilistic: { sampling_percentage: 10 }
+  exporters:
+    otlp/tempo:
+      endpoint: tempo.infra.svc.cluster.local:4317
+      insecure: true
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [batch, tail_sampling]
+        exporters: [otlp/tempo]

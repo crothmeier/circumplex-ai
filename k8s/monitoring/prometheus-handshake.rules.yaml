@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: handshake-alerts
+  namespace: monitoring
+spec:
+  groups:
+  - name: handshake.rules
+    rules:
+    - alert: NodeListenDrops
+      expr: increase(node_netstat_TcpExt_ListenDrops[5m]) > 0
+      for: 2m
+      labels: { severity: critical }
+      annotations:
+        summary: TCP handshakes dropped on {{ $labels.instance }}
+        description: Accept queue overflow may cause 522/504 timeouts.
+    - alert: TraefikGatewayTimeouts
+      expr: increase(traefik_service_requests_total{code="504"}[5m]) > 5
+      labels: { severity: warning }
+      annotations:
+        summary: Traefik is returning 504s
+        description: Upstream service not completing handshake.
+    - alert: P95LatencyHigh
+      expr: histogram_quantile(0.95, sum(rate(traefik_service_request_duration_seconds_bucket{service=~".*chat-completions.*"}[5m])) by (le)) > 0.4
+      for: 5m
+      labels: { severity: warning }
+      annotations:
+        summary: P95 latency >400 ms for chat completions

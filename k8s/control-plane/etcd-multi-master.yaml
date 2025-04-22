@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: kube-controller-manager
+  namespace: kube-system
+subsets: []
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-controller-manager
+  namespace: kube-system
+spec:
+  clusterIP: None
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k3s-config
+  namespace: kube-system
+data:
+  config.yaml: |
+    data-dir: /var/lib/rancher/k3s_etcd
+    write-kubeconfig-mode: "0644"
+    etcd-expose-metrics: true
+    etcd-snapshot-schedule-cron: "0 */6 * * *"

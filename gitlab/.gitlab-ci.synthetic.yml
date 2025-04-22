@@ -1,0 +1,13 @@
+stages: [performance]
+latency_test:
+  stage: performance
+  image: grafana/k6:0.45.0
+  variables:
+    API_URL: "https://api.circumplex-ai.dev"
+  script: |
+    echo 'import http from "k6/http";
+    export let options = {vus:1,iterations:20, thresholds:{ http_req_duration:["p(95)<400"] }};
+    export default function(){http.post(`${__ENV.API_URL}/v1/chat/completions`,JSON.stringify({model:"gpt-test",messages:[]}),{headers:{"Content-Type":"application/json"}});} ' > test.js
+    k6 run --quiet test.js
+  only:
+    - schedules

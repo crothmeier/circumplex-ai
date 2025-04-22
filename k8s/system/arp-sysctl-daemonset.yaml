@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sysctl-tune
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels: { app: sysctl-tune }
+  template:
+    metadata: { labels: { app: sysctl-tune } }
+    spec:
+      hostPID: true
+      containers:
+      - name: sysctl
+        image: busybox:1.36
+        command: ["sh","-c","sysctl -w net.ipv4.neigh.default.gc_thresh1=4096 && sysctl -w net.ipv4.neigh.default.gc_thresh2=8192 && sysctl -w net.ipv4.neigh.default.gc_thresh3=16384 && sysctl -w net.netfilter.nf_conntrack_max=131072 && sleep 3600"]
+        securityContext:
+          privileged: true
+      restartPolicy: Always
