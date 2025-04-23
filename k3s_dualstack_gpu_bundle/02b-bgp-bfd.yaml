@@ -1,0 +1,44 @@
+apiVersion: metallb.io/v1beta1
+kind: BFDProfile
+metadata:
+  name: fast-bfd
+  namespace: metallb-system
+spec:
+  receiveInterval: 300
+  transmitInterval: 300
+  detectMultiplier: 3
+  echoMode: false
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPPeer
+metadata:
+  name: fortigate-ipv4-peer
+  namespace: metallb-system
+spec:
+  myAsn: 64512
+  peerAsn: 65001
+  peerAddress: 192.168.1.1
+  bfdProfile: fast-bfd
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPPeer
+metadata:
+  name: fortigate-ipv6-peer
+  namespace: metallb-system
+spec:
+  myAsn: 64512
+  peerAsn: 65001
+  peerAddress: 2001:db8:1::1
+  bfdProfile: fast-bfd
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: dualstack-bgp-advertisement
+  namespace: metallb-system
+spec:
+  ipPools:
+    - external-ipv4-pool
+    - external-ipv6-pool
+  aggregationLength: 32
+  aggregationLengthV6: 128

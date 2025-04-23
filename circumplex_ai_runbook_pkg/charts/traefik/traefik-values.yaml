@@ -1,0 +1,31 @@
+ports:
+  web:
+    port: 8000
+    expose:
+      enabled: true
+      exposedPort: 80
+    proxyProtocol:
+      trustedIPs:
+        - "10.0.10.0/24"
+        - "127.0.0.1/32"
+  websecure:
+    port: 8443
+    expose:
+      enabled: true
+      exposedPort: 443
+    proxyProtocol:
+      trustedIPs:
+        - "10.0.10.0/24"
+        - "127.0.0.1/32"
+  metrics:
+    port: 9100
+    expose:
+      enabled: true
+      exposedPort: 9100
+service:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ipFamilyPolicy: PreferDualStack
+  ipFamilies:
+    - IPv4
+    - IPv6

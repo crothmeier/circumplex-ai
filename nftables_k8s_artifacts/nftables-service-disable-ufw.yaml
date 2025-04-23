@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: enforce-nftables
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels: {app: enforce-nftables}
+  template:
+    metadata:
+      labels: {app: enforce-nftables}
+    spec:
+      hostPID: true
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: switch-fw
+        image: ubuntu:24.04
+        command:
+          - /bin/bash
+          - -c
+          - |
+            systemctl disable --now ufw || true
+            systemctl enable  --now nftables
+            sleep infinity
+        securityContext:
+          privileged: true
+      tolerations:
+        - operator: "Exists"

@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gpu-system
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nvidia-device-plugin-daemonset
+  namespace: gpu-system
+spec:
+  selector:
+    matchLabels:
+      app: nvidia-device-plugin
+  template:
+    metadata:
+      labels:
+        app: nvidia-device-plugin
+    spec:
+      runtimeClassName: nvidia
+      nodeSelector:
+        accelerator: nvidia
+      tolerations:
+        - key: "accelerator"
+          operator: "Equal"
+          value: "nvidia"
+          effect: "NoSchedule"
+      containers:
+        - name: nvidia-device-plugin
+          image: nvcr.io/nvidia/k8s-device-plugin:v0.17.1
+          args: ["--fail-on-init-error=true"]
+          env:
+            - name: MIG_STRATEGY
+              value: "single" # adjust if needed
+          securityContext:
+            privileged: true
